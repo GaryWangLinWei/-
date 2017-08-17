@@ -1,0 +1,13 @@
+static int Reverse(int num)
+        {
+            int tail = 0;
+            int result=0;
+            do
+            {
+                tail=num%10;
+                result = result * 10 + tail;
+                num = num / 10;
+            }
+            while(num!=0);
+            return result;
+        }
