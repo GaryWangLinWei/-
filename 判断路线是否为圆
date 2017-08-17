@@ -1,0 +1,5 @@
+static bool IsCircle(string moves)
+        {
+            return moves.Split('L').Length == moves.Split('R').Length &&
+                    moves.Split('U').Length == moves.Split('D').Length;
+        }
