@@ -1,0 +1,31 @@
+     //first solution
+     static bool canConstruct(string a, string b)
+        {
+            char[] arr01 = a.ToCharArray();
+            char[] arr02 = b.ToCharArray();
+            for (int i = 0; i < arr01.Length; i++)
+            {
+                int number=Array.IndexOf(arr02,arr01[i]);
+                if (number >= 0)
+                    arr02[number] = ' ';
+                else
+                    return false;
+            }
+            return true;
+        }
+        
+        //second solution
+        public class Solution {
+    public boolean canConstruct(String ransomNote, String magazine) {
+        int[] arr = new int[26];
+        for (int i = 0; i < magazine.length(); i++) {
+            arr[magazine.charAt(i) - 'a']++;
+        }
+        for (int i = 0; i < ransomNote.length(); i++) {
+            if(--arr[ransomNote.charAt(i)-'a'] < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
