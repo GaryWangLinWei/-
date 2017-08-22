@@ -1,0 +1,12 @@
+static string Rev(string str)
+        {
+            string[] arr = str.Split(' ');
+            for (int i = 0; i < arr.Length; i++)
+            {
+                char[] arrnew = arr[i].ToCharArray();
+                Array.Reverse(arrnew);
+                arr[i] = new string(arrnew);
+            }
+            string returnstring = string.Join(" ", arr);
+            return returnstring;
+        }
