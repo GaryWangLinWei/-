@@ -1,0 +1,10 @@
+static int MaxProfit(int[] prices)
+        {
+            int max = 0, now = 0;
+            for(int i=0;i<prices.Length-1;i++)
+            {
+                now = Math.Max(0, now += prices[i + 1] - prices[i]);
+                max = Math.Max(max, now);
+            }
+            return max;
+        }
