@@ -1,0 +1,15 @@
+static int MaxSubArray(int[] nums)
+        {
+            int now=nums[0],max=nums[0];
+            for(int i=1;i<nums.Length;i++)
+            {
+                now = nums[i] + (now > 0 ? now : 0);
+                max = Math.Max(max, now);
+            }
+            if(max==0)
+            {
+                Array.Sort(nums);
+                max = nums[nums.Length - 1];
+            }
+            return max;
+        }
