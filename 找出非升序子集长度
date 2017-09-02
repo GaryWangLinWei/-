@@ -1,0 +1,14 @@
+static int FindUnsortedSubarray(int[] nums)
+        {
+            int begin = -1, end = -2;
+            int max=nums[0];
+            int min=nums[nums.Length-1];
+            for(int i=1;i<nums.Length;i++)
+            {
+                max = Math.Max(max, nums[i]);
+                min = Math.Min(min, nums[nums.Length - 1 - i]);
+                if (nums[i] < max) end = i;
+                if (nums[nums.Length - 1 - i] > min) begin = nums.Length - 1 - i;
+            }
+            return end - begin + 1;
+        }
